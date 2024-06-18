@@ -14,7 +14,8 @@ public class Segment {
     private List<Seat> seats;
     private int tripOrder;
 
-    Segment(int flightId, Source source, Destination destination, List<Seat> seats){
+    public Segment() {}
+    public Segment(int flightId, Source source, Destination destination, List<Seat> seats){
         this.source = source;
         this.destination = destination;
         this.seats = seats;

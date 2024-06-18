@@ -37,3 +37,7 @@ application {
     // Define the main class for the application.
     mainClass = 'ticketsBooking.App'
 }
+
+run{
+    standardInput = System.in
+}

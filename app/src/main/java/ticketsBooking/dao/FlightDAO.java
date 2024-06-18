@@ -2,8 +2,9 @@ package ticketsBooking.dao;
 
 import ticketsBooking.entities.Flight;
 
-import java.sql.Connection;
+import java.sql.*;
 import java.sql.PreparedStatement;
+import java.sql.Statement;
 
 public class FlightDAO {
 
@@ -13,18 +14,25 @@ public class FlightDAO {
         this.connection = connection;
     }
 
-    public boolean addFlight(Flight flight){
+    public int addFlight(Flight flight){
         String sql = "INSERT INTO Flight(name) VALUES(?)";
 
-        try(PreparedStatement stmt = connection.prepareStatement(sql)){
+        try(PreparedStatement stmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)){
             stmt.setString(1,flight.getFlightName());
 
             int rowsAffected = stmt.executeUpdate();
-            return rowsAffected > 0;
+            if (rowsAffected > 0) {
+                try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
+                    if (generatedKeys.next()) {
+                        return generatedKeys.getInt(1); // Return the generated ID
+                    }
+                }
+            }
         }
         catch (Exception e){
             System.out.println("Error while adding to Flight table. "+e);
-            return false;
+
         }
+        return -1;
     }
 }

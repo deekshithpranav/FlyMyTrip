@@ -1,16 +1,18 @@
 package ticketsBooking.entities;
 
 public class Seat {
+    private int segmentId;
     private int seatNumber;
     private boolean isBooked;
-    private Ticket ticket;
 
-    // Constructor
+    //region Constructor
     public Seat() {}
-    public Seat(int seatNumber) {
+    public Seat(int segmentId, int seatNumber) {
+        this.segmentId = segmentId;
         this.seatNumber = seatNumber;
         this.isBooked = false;
     }
+    //endregion
 
     // Getters and setters
     public int getSeatNumber() {
@@ -29,11 +31,11 @@ public class Seat {
         this.isBooked = isBooked;
     }
 
-    public Ticket getTicket() {
-        return ticket;
+    public int getSegmentId() {
+        return segmentId;
     }
 
-    public void setTicket(Ticket ticket) {
-        this.ticket = ticket;
+    public void setSegmentId(int segmentId) {
+        this.segmentId = segmentId;
     }
 }

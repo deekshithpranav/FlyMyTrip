@@ -8,6 +8,7 @@ public class Flight {
     private List<Segment> segments;
 
     // Constructor
+    public Flight(){}
     public Flight(String flightName, int flightID, List<Segment> segments) {
         this.flightName = flightName;
         this.flightID = flightID;

@@ -1,25 +1,23 @@
 package ticketsBooking.locations;
 
 public class Destination {
-    private String destinationId;
-    private String Name;
+    private int segmentId;
+    private String name;
     private String arrivalTime;
-    private int order;
 
-    public String getId() {
-        return destinationId;
+    public Destination() {}
+    public Destination(int segmentId, String name, String arrivalTime) {
+        this.segmentId = segmentId;
+        this.name = name;
+        this.arrivalTime = arrivalTime;
     }
 
-    public void setId(String destinationId) {
-        this.destinationId = destinationId;
+    public int getSegmentId() {
+        return segmentId;
     }
 
-    public int getOrder() {
-        return order;
-    }
-
-    public void setOrder(int order) {
-        this.order = order;
+    public void setSegmentId(int destinationId) {
+        this.segmentId = destinationId;
     }
 
     public String getArrivalTime() {
@@ -31,10 +29,10 @@ public class Destination {
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        this.Name = name;
+        this.name = name;
     }
  }

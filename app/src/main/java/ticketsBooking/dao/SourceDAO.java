@@ -1,5 +1,6 @@
 package ticketsBooking.dao;
 
+import ticketsBooking.locations.Destination;
 import ticketsBooking.locations.Source;
 
 import java.sql.*;
@@ -14,10 +15,11 @@ public class SourceDAO {
     }
 
     public boolean addSource(Source source){
-        String sql = "INSERT INTO source(source, departure_time) VALUES(?, ?)";
+        String sql = "INSERT INTO source(segment_id, source, departure_time) VALUES(?, ?, ?)";
         try(PreparedStatement stmt = connection.prepareStatement(sql)){
-            stmt.setString(1, source.getName());
-            stmt.setTimestamp(2, Timestamp.valueOf(source.getDepartureTime()));
+            stmt.setInt(1, source.getSegmentId());
+            stmt.setString(2, source.getName());
+            stmt.setTimestamp(3, Timestamp.valueOf(source.getDepartureTime()));
 
             int rows_affected = stmt.executeUpdate();
             return rows_affected > 0;
@@ -36,6 +38,7 @@ public class SourceDAO {
 
             while(rs.next()){
                 Source source = new Source(
+                        rs.getInt("segment_id"),
                         rs.getString("source"),
                         rs.getTimestamp("departure_time").toString()
                 );
@@ -47,6 +50,35 @@ public class SourceDAO {
             System.out.println("Error while fetching all the records from source table. "+e);
             return null;
         }
+    }
+
+    public boolean patchSource(Source source){
+        String sql = "UPDATE TABLE Destination SET destination = ?, arrival_time = ? WHERE segment_id = ?";
+        try(PreparedStatement stmt = connection.prepareStatement(sql)){
+            stmt.setString(1, source.getName());
+            stmt.setTimestamp(2, Timestamp.valueOf(source.getDepartureTime()));
+            stmt.setInt(3, source.getSegmentId());
+
+            int rows_affected = stmt.executeUpdate();
+            return rows_affected > 0;
+        }
+        catch (Exception e){
+            System.out.println("Exception while updating the source. "+e);
+        }
+        return false;
+    }
+
+    public boolean deleteDestinations(int segmentId) {
+        String sql = "DELETE FROM source WHERE segment_id = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setInt(1, segmentId);
+
+            int rowsAffected = stmt.executeUpdate();
+            return rowsAffected > 0;
+        } catch (Exception e) {
+            System.out.println("Error while deleting records from source table. " + e);
+        }
+        return false;
     }
 
 }

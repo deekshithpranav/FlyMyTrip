@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16f36a75-c6e2-423f-a663-413fc1677658" name="Changes" comment="" />
+    <list default="true" id="16f36a75-c6e2-423f-a663-413fc1677658" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/dao/SeatDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/dao/SegmentDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/services/AdminServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/util/DropTablesUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/dao/DestinationDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/dao/DestinationDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/dao/FlightDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/dao/FlightDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/dao/SourceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/dao/SourceDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/entities/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/entities/Flight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/entities/Seat.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/entities/Seat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/entities/Segment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/entities/Segment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/locations/Destination.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/locations/Destination.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/locations/Source.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/locations/Source.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/schema.sql" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,7 +66,9 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="2huLalvEQeZTmTBOnEEwn8KJZzG" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -59,7 +78,7 @@
     "Gradle.AppTest.executor": "Run",
     "Gradle.Build flymytrip.executor": "Run",
     "Gradle.Upgrade Gradle wrapper.executor": "Run",
-    "Gradle.flymytrip:app [:app:App.main()].executor": "Debug",
+    "Gradle.flymytrip:app [:app:App.main()].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "ignore.preview.features.used": "true",
     "kotlin-language-version-configured": "true",
@@ -126,19 +145,19 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/ticketsBooking/App.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/ticketsBooking/util/SchemaInitializer.java</url>
           <line>25</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/ticketsBooking/dao/SourceDAO.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="4" />
+          <url>file://$PROJECT_DIR$/app/src/main/java/ticketsBooking/services/AdminServices.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/ticketsBooking/dao/FlightDAO.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

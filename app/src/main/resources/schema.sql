@@ -1,40 +1,46 @@
--- Create Source table
-CREATE TABLE Source (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    source VARCHAR(100) NOT NULL,
-    departure_time TIMESTAMP NOT NULL
-);
-
--- Create Destination table
-CREATE TABLE Destination (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    destination VARCHAR(100) NOT NULL,
-    arrival_time TIMESTAMP NOT NULL
-);
 
 -- Create Flight table
 CREATE TABLE Flight (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL
+    name VARCHAR(100) NOT NULL,
+    UNIQUE(name)
 );
 
 -- Create Segment table
 CREATE TABLE Segment (
     id INT AUTO_INCREMENT PRIMARY KEY,
     flight_id INT NOT NULL,
-    source_id INT NOT NULL,
-    destination_id INT NOT NULL,
-    FOREIGN KEY (flight_id) REFERENCES Flight(id),
-    FOREIGN KEY (source_id) REFERENCES Source(id),
-    FOREIGN KEY (destination_id) REFERENCES Destination(id)
+    trip_order INT NOT NULL,
+    FOREIGN KEY (flight_id) REFERENCES Flight(id) ON DELETE CASCADE
 );
+
+-- Create Source table
+CREATE TABLE Source (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    segment_id INT NOT NULL,
+    source VARCHAR(100) NOT NULL,
+    departure_time TIMESTAMP NOT NULL,
+    FOREIGN KEY (segment_id) REFERENCES Segment(id) ON DELETE CASCADE
+);
+
+-- Create Destination table
+CREATE TABLE Destination (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    segment_id INT NOT NULL,
+    destination VARCHAR(100) NOT NULL,
+    arrival_time TIMESTAMP NOT NULL,
+    FOREIGN KEY (segment_id) REFERENCES Segment(id) ON DELETE CASCADE
+);
+
 
 -- Create Seat table
 CREATE TABLE Seat (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    segment_id INT NOT NULL,
     seat_number INT NOT NULL,
     is_booked BOOLEAN DEFAULT FALSE,
-    UNIQUE (seat_number)
+    FOREIGN KEY (segment_id) REFERENCES Segment(id) ON DELETE CASCADE,
+    UNIQUE (seat_number, segment_id) -- Ensures unique seat number within a segment
 );
 
 -- Create User table
