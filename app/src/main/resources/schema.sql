@@ -11,6 +11,7 @@ CREATE TABLE Segment (
     id INT AUTO_INCREMENT PRIMARY KEY,
     flight_id INT NOT NULL,
     trip_order INT NOT NULL,
+    price INT NOT NULL,
     FOREIGN KEY (flight_id) REFERENCES Flight(id) ON DELETE CASCADE
 );
 

@@ -11,10 +11,10 @@ public class UserDAO {
 
     private Connection connection;
 
-    public UserDAO() {
+    public UserDAO(Connection connection) {
         try {
-            this.connection = DatabaseUtil.getConnection();
-        } catch (SQLException e) {
+            this.connection = connection;
+        } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException("Error connecting to the database", e);
         }

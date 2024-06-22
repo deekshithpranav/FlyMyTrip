@@ -1,14 +1,20 @@
 package ticketsBooking.locations;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Source {
 
     private int segmentId;
-    private String Name;
+    @JsonProperty("name")
+    private String name;
+
+    @JsonProperty("departureTime")
     private String departureTime;
 
     public Source(){}
     public Source(int segmentId, String source, String departureTime) {
-        this.Name = source;
+        this.segmentId = segmentId;
+        this.name = source;
         this.departureTime = departureTime;
     }
 
@@ -29,10 +35,10 @@ public class Source {
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        this.Name = name;
+        this.name = name;
     }
 }

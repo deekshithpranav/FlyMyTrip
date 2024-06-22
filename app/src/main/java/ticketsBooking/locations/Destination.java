@@ -1,8 +1,13 @@
 package ticketsBooking.locations;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Destination {
     private int segmentId;
+
+    @JsonProperty("name")
     private String name;
+    @JsonProperty("arrivalTime")
     private String arrivalTime;
 
     public Destination() {}

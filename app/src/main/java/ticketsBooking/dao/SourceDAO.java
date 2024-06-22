@@ -30,6 +30,25 @@ public class SourceDAO {
         return false;
     }
 
+
+    public Source getSource(int segmentId){
+        String sql = "SELECT * FROM SOURCE WHERE segment_id = ?";
+        Source source = null;
+        try(PreparedStatement stmt = connection.prepareStatement(sql)) {
+            ResultSet rs = stmt.executeQuery();
+            while(rs.next()){
+                source = new Source();
+                source.setName(rs.getString("name"));
+                source.setDepartureTime(rs.getString("departure_time"));
+                source.setSegmentId(rs.getInt("segment_id"));
+            }
+        }
+
+        catch(Exception e){
+            System.out.println("Error while fetching source from database. "+e);
+        }
+        return source;
+    }
     public List<Source> getAllSources(){
         List<Source> sources = new ArrayList<>();
         String sql = "SELECT * FROM source";

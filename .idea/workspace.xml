@@ -5,18 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="16f36a75-c6e2-423f-a663-413fc1677658" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/dao/SeatDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/dao/SegmentDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/services/AdminServices.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/util/DropTablesUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/dao/TicketsDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/services/BookingServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/services/ParserServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/services/UserServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/util/PasswordUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/dao/DestinationDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/dao/DestinationDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/dao/FlightDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/dao/FlightDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/dao/SegmentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/dao/SegmentDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/dao/SourceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/dao/SourceDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/dao/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/entities/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/entities/Flight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/entities/Seat.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/entities/Seat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/entities/Segment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/entities/Segment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/locations/Destination.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/locations/Destination.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/locations/Source.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ticketsBooking/locations/Source.java" afterDir="false" />
@@ -59,8 +61,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.13.3/56deb9ea2c93a7a556b3afbedd616d342963464e/jackson-databind-2.13.3.jar!/com/fasterxml/jackson/databind/ObjectMapper.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.13.3/87fe580a4141d26b6036234fb0c240aa1d4592db/jackson-databind-2.13.3-sources.jar!/com/fasterxml/jackson/databind/ObjectMapper.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.gradle/jdks/eclipse_adoptium-21-amd64-windows/jdk-21.0.3+9/lib/src.zip!/java.base/java/lang/System.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/app/src/main/java/ticketsBooking/services/ParserServices.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -73,23 +81,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.AppTest.executor": "Run",
-    "Gradle.Build flymytrip.executor": "Run",
-    "Gradle.Upgrade Gradle wrapper.executor": "Run",
-    "Gradle.flymytrip:app [:app:App.main()].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ignore.preview.features.used": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/Learnings/Java/flymytrip",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.AppTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build flymytrip.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Upgrade Gradle wrapper.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.flymytrip:app [:app:App.main()].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Learnings/Java/flymytrip&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ticketsBooking.App" />
@@ -156,8 +165,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/ticketsBooking/dao/FlightDAO.java</url>
-          <line>17</line>
+          <line>19</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/ticketsBooking/services/ParserServices.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
