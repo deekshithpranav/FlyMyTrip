@@ -15,7 +15,7 @@ FlyMyTrip is a Java console application for booking flight tickets. This project
 
 - ☕ Java 8 or higher
 - 🐬 MySQL or any other relational database
-- 🐘 Maven
+- 🐘 Gradle
 
 ### ⚙️ Installing
 
