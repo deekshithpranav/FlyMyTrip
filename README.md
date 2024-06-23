@@ -27,10 +27,11 @@ cd FlyMyTrip
 ```
 
 Update the DatabaseUtil.java file with your database connection details:
+```sh
 private static final String URL = "jdbc:mysql://localhost:3306/your_database_name";
 private static final String USER = "your_database_user";
 private static final String PASSWORD = "your_database_password";
-
+```
 2. **Setup Database**
 Modify the src/main/java/App.java file:
 
