@@ -35,10 +35,11 @@ public class SourceDAO {
         String sql = "SELECT * FROM SOURCE WHERE segment_id = ?";
         Source source = null;
         try(PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setInt(1, segmentId);
             ResultSet rs = stmt.executeQuery();
             while(rs.next()){
                 source = new Source();
-                source.setName(rs.getString("name"));
+                source.setName(rs.getString("source"));
                 source.setDepartureTime(rs.getString("departure_time"));
                 source.setSegmentId(rs.getInt("segment_id"));
             }

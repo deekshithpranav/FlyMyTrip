@@ -1,0 +1,167 @@
+[
+    {
+        "flightId": "AZ101",
+        "segments": [
+            {
+                "seatsCount": 50,
+                "trip_order": 1,
+                "price": 50,
+                "seats": 100,
+                "source": {
+                    "name": "New York",
+                    "departureTime": "2023-06-18 10:00:00"
+                },
+                "destination": {
+                    "name": "London",
+                    "arrivalTime": "2023-06-18 20:00:00"
+                }
+            },
+            {
+                "seatsCount": 50,
+                "trip_order": 2,
+                "seats": 100,
+                "price": 50,
+                "source": {
+                    "name": "London",
+                    "departureTime": "2023-06-19 15:00:00"
+                },
+                "destination": {
+                    "name": "Paris",
+                    "arrivalTime": "2023-06-19 17:00:00"
+                }
+            }
+        ]
+    },
+    {
+        "flightId": "BA202",
+        "segments": [
+            {
+                "seatsCount": 60,
+                "trip_order": 1,
+                "seats": 100,
+                "price": 50,
+                "source": {
+                    "name": "San Francisco",
+                    "departureTime": "2023-07-20 12:00:00"
+                },
+                "destination": {
+                    "name": "Los Angeles",
+                    "arrivalTime": "2023-07-20 14:00:00"
+                }
+            },
+            {
+                "seatsCount": 60,
+                "trip_order": 2,
+                "seats": 100,
+                "price": 50,
+                "source": {
+                    "name": "Los Angeles",
+                    "departureTime": "2023-07-21 10:00:00"
+                },
+                "destination": {
+                    "name": "Las Vegas",
+                    "arrivalTime": "2023-07-21 11:30:00"
+                }
+            }
+        ]
+    },
+    {
+        "flightId": "CA303",
+        "segments": [
+            {
+                "seatsCount": 70,
+                "trip_order": 1,
+                "seats": 100,
+                "price": 50,
+                "source": {
+                    "name": "Chicago",
+                    "departureTime": "2023-08-15 08:00:00"
+                },
+                "destination": {
+                    "name": "Dallas",
+                    "arrivalTime": "2023-08-15 10:30:00"
+                }
+            },
+            {
+                "seatsCount": 70,
+                "trip_order": 2,
+                "seats": 100,
+                "price": 50,
+                "source": {
+                    "name": "Dallas",
+                    "departureTime": "2023-08-15 12:00:00"
+                },
+                "destination": {
+                    "name": "Houston",
+                    "arrivalTime": "2023-08-15 13:30:00"
+                }
+            }
+        ]
+    },
+    {
+        "flightId": "DL404",
+        "segments": [
+            {
+                "seatsCount": 80,
+                "trip_order": 1,
+                "seats": 100,
+                "price": 50,
+                "source": {
+                    "name": "Atlanta",
+                    "departureTime": "2023-09-10 09:00:00"
+                },
+                "destination": {
+                    "name": "Miami",
+                    "arrivalTime": "2023-09-10 11:00:00"
+                }
+            },
+            {
+                "seatsCount": 80,
+                "trip_order": 2,
+                "seats": 100,
+                "price": 50,
+                "source": {
+                    "name": "Miami",
+                    "departureTime": "2023-09-10 13:00:00"
+                },
+                "destination": {
+                    "name": "Orlando",
+                    "arrivalTime": "2023-09-10 14:00:00"
+                }
+            }
+        ]
+    },
+    {
+        "flightId": "EF505",
+        "segments": [
+            {
+                "seatsCount": 90,
+                "trip_order": 1,
+                "seats": 100,
+                "price": 50,
+                "source": {
+                    "name": "Boston",
+                    "departureTime": "2023-10-05 07:00:00"
+                },
+                "destination": {
+                    "name": "Philadelphia",
+                    "arrivalTime": "2023-10-05 09:00:00"
+                }
+            },
+            {
+                "seatsCount": 90,
+                "trip_order": 2,
+                "seats": 100,
+                "price": 50,
+                "source": {
+                    "name": "Philadelphia",
+                    "departureTime": "2023-10-05 11:00:00"
+                },
+                "destination": {
+                    "name": "Washington D.C.",
+                    "arrivalTime": "2023-10-05 12:30:00"
+                }
+            }
+        ]
+    }
+]

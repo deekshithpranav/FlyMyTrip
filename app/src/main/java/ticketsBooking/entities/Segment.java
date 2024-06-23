@@ -19,10 +19,8 @@ public class Segment {
     @JsonProperty("destination")
     private Destination destination;
 
-    @JsonProperty("seatsCount")
-    int seatsCount;
-
-    private List<Seat> seats;
+    @JsonProperty("seats")
+    int seats;
 
     @JsonProperty("trip_order")
     private int tripOrder;
@@ -39,11 +37,19 @@ public class Segment {
 
     public Segment() {}
 
-    public Segment(int flightId, Source source, Destination destination, List<Seat> seats) {
+    public Segment(int flightId, Source source, Destination destination, int seats) {
         this.flightId = flightId;
         this.source = source;
         this.destination = destination;
         this.seats = seats;
+    }
+
+    public int getSeatsCount() {
+        return seats;
+    }
+
+    public void setSeatsCount(int seatsCount) {
+        this.seats = seatsCount;
     }
 
     public int getId() {
@@ -76,14 +82,6 @@ public class Segment {
 
     public void setDestination(Destination destination) {
         this.destination = destination;
-    }
-
-    public List<Seat> getSeats() {
-        return seats;
-    }
-
-    public void setSeats(List<Seat> seats) {
-        this.seats = seats;
     }
 
     public int getTripOrder() {

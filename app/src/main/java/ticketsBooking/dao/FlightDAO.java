@@ -38,6 +38,26 @@ public class FlightDAO {
         return -1;
     }
 
+    public Flight getFlight(int flightId){
+        String sql = "SELECT * FROM Flight WHERE id = ?";
+
+        try(PreparedStatement stmt = connection.prepareStatement(sql)){
+            stmt.setInt(1,flightId);
+            ResultSet rs = stmt.executeQuery();
+            Flight flight = null;
+            while(rs.next()){
+                flight = new Flight();
+                flight.setFlightName(rs.getString("name"));
+            }
+            return flight;
+        }
+
+        catch (Exception e){
+            System.out.println("Error while fetching the flight. "+e);
+            return null;
+        }
+    }
+
     public boolean delete(String flightId){
         String deleteFlightSql = "DELETE FROM Flight WHERE name = ?";
 

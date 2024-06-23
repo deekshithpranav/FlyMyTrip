@@ -12,6 +12,12 @@ public class Seat {
         this.seatNumber = seatNumber;
         this.isBooked = false;
     }
+
+    public Seat(int id, int segmentId, int seatNumber, boolean isBooked) {
+        this.segmentId = segmentId;
+        this.seatNumber = seatNumber;
+        this.isBooked = isBooked;
+    }
     //endregion
 
     // Getters and setters

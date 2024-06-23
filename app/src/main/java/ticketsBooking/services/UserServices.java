@@ -78,25 +78,39 @@ public class UserServices {
         }
     }
 
-    public void TicketOperations(User user, BufferedReader br){
-        System.out.println("Welcome to FlyMyTrip Booking");
-        System.out.println("-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-");
-        System.out.println("User Booking Menu");
-        System.out.println("1. Book Tickets");
-        System.out.println("2. View Booked Tickets");
-        System.out.println("3. Cancel Tickets");
+    public void TicketOperations(User user, BufferedReader br) {
+        while (true) {
+            System.out.println("Welcome to FlyMyTrip Booking");
+            System.out.println("-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-");
+            System.out.println("User Booking Menu");
+            System.out.println("1. Book Tickets");
+            System.out.println("2. View Booked Tickets");
+            System.out.println("3. Cancel Tickets");
+            System.out.println("4. Logout");
 
-        try{
-            String input = br.readLine();
-            switch (Integer.parseInt(input)){
-                case 1:
-                    BookingServices bookingServices = new BookingServices();
-                    bookingServices.searchTickets(user);
+            try {
+                String input = br.readLine();
+                BookingServices bookingServices = new BookingServices();
+                switch (Integer.parseInt(input)) {
+                    case 1:
+                        bookingServices.searchTickets(user);
+                        break;
+                    case 2:
+                        bookingServices.viewBookings(user);
+                        break;
+                    case 3:
+                        bookingServices.cancelBooking(user);
+                        break;
+                    case 4:
+                        System.out.println("Logging out...");
+                        return; // Exit the method and effectively log out the user
+                    default:
+                        System.out.println("Invalid option. Please enter a valid option (1-4).");
+                        break;
+                }
+            } catch (Exception e) {
+                System.out.println("Error occurred: " + e.getMessage());
             }
         }
-        catch (Exception e){
-            System.out.println(e);
-        }
-
     }
 }

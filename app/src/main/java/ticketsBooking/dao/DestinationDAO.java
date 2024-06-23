@@ -33,6 +33,26 @@ public class DestinationDAO {
         return false;
     }
 
+    public Destination getDestination(int segmentId){
+        String sql = "SELECT * FROM DESTINATION WHERE segment_id = ?";
+        Destination destination = null;
+        try(PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setInt(1, segmentId);
+            ResultSet rs = stmt.executeQuery();
+            while(rs.next()){
+                destination = new Destination();
+                destination.setName(rs.getString("destination"));
+                destination.setArrivalTime(rs.getString("arrival_time"));
+                destination.setSegmentId(rs.getInt("segment_id"));
+            }
+        }
+
+        catch(Exception e){
+            System.out.println("Error while fetching destination from database. "+e);
+        }
+        return destination;
+    }
+
     public List<Destination> getAllDestinations(){
         List<Destination> destinations = new ArrayList<>();
         String sql = "SELECT * FROM destination";

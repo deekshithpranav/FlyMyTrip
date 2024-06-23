@@ -111,15 +111,4 @@ public class UserDAO {
             return false;
         }
     }
-
-    // Close the connection when done
-    public void closeConnection() {
-        try {
-            if (connection != null && !connection.isClosed()) {
-                connection.close();
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
 }

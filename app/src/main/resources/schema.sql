@@ -12,6 +12,7 @@ CREATE TABLE Segment (
     flight_id INT NOT NULL,
     trip_order INT NOT NULL,
     price INT NOT NULL,
+    seats INT NOT NULL,
     FOREIGN KEY (flight_id) REFERENCES Flight(id) ON DELETE CASCADE
 );
 
@@ -51,6 +52,7 @@ CREATE TABLE User (
     email VARCHAR(100) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    UNIQUE (name)
 );
 
 -- Create Ticket table
@@ -61,9 +63,9 @@ CREATE TABLE Ticket (
     segment_id INT NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
     booking_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES User(id),
-    FOREIGN KEY (flight_id) REFERENCES Flight(id),
-    FOREIGN KEY (segment_id) REFERENCES Segment(id)
+    FOREIGN KEY (user_id) REFERENCES User(id) ON DELETE CASCADE,
+    FOREIGN KEY (flight_id) REFERENCES Flight(id) ON DELETE CASCADE,
+    FOREIGN KEY (segment_id) REFERENCES Segment(id) ON DELETE CASCADE
 );
 
 -- Create join table Ticket_Seat
@@ -71,6 +73,6 @@ CREATE TABLE Ticket_Seat (
     ticket_id INT NOT NULL,
     seat_id INT NOT NULL,
     PRIMARY KEY (ticket_id, seat_id),
-    FOREIGN KEY (ticket_id) REFERENCES Ticket(id),
-    FOREIGN KEY (seat_id) REFERENCES Seat(id)
+    FOREIGN KEY (ticket_id) REFERENCES Ticket(id) ON DELETE CASCADE,
+    FOREIGN KEY (seat_id) REFERENCES Seat(id) ON DELETE CASCADE
 );

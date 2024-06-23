@@ -7,18 +7,20 @@ import java.util.List;
 
 public class Ticket {
     private int id;
+    private int flightId;
+
     private User user;
     private Flight flight;
     private Segment segment;
-    private BigDecimal price;
-    private List<Seat> seats;
+    private int price;
+    private List<Integer> seats;
     private Timestamp bookingTime;
 
     public Ticket() {
         this.seats = new ArrayList<>();
     }
 
-    public Ticket(int id, User user, Flight flight, Segment segment, BigDecimal price, List<Seat> seats, Timestamp bookingTime) {
+    public Ticket(int id, User user, Flight flight, Segment segment, int price, List<Integer> seats, Timestamp bookingTime) {
         this.id = id;
         this.user = user;
         this.flight = flight;
@@ -29,6 +31,15 @@ public class Ticket {
     }
 
     // Getters and setters
+
+    public int getFlightId() {
+        return flightId;
+    }
+
+    public void setFlightId(int flightId) {
+        this.flightId = flightId;
+    }
+
     public int getId() {
         return id;
     }
@@ -61,19 +72,19 @@ public class Ticket {
         this.segment = segment;
     }
 
-    public BigDecimal getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
-    public List<Seat> getSeats() {
+    public List<Integer> getSeats() {
         return seats;
     }
 
-    public void setSeats(List<Seat> seats) {
+    public void setSeats(List<Integer> seats) {
         this.seats = seats;
     }
 
@@ -83,14 +94,6 @@ public class Ticket {
 
     public void setBookingTime(Timestamp bookingTime) {
         this.bookingTime = bookingTime;
-    }
-
-    public void addSeat(Seat seat) {
-        this.seats.add(seat);
-    }
-
-    public void removeSeat(Seat seat) {
-        this.seats.remove(seat);
     }
 
     @Override
